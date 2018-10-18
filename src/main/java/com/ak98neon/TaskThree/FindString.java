@@ -2,19 +2,25 @@ package com.ak98neon.TaskThree;
 
 public class FindString {
     public static void main(String[] args) {
-        Integer[] arr = {1,2,3,4,5};
+        Integer[] arr = {1, 2, 3, 4, 5};
         System.out.println(ArrayAlg.minAndmax(arr));
     }
 }
 
 class ArrayAlg {
     public static <T extends Comparable> Pair<T> minAndmax(T[] arr) {
-        if (arr == null || arr.length == 0) { return null; }
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
         T min = arr[0];
         T max = arr[0];
         for (int i = 1; i < arr.length; i++) {
-            if (min.compareTo(arr[i]) > 0) { min = arr[i]; }
-            if (max.compareTo(arr[i]) < 0) { max = arr[i]; }
+            if (min.compareTo(arr[i]) > 0) {
+                min = arr[i];
+            }
+            if (max.compareTo(arr[i]) < 0) {
+                max = arr[i];
+            }
         }
         return new Pair<>(min, max);
     }
