@@ -1,61 +1,17 @@
 package com.ak98neon.TaskThree;
 
+import java.util.Set;
+import java.util.TreeSet;
+
 public class FindString {
     public static void main(String[] args) {
-        Integer[] arr = {1, 2, 3, 4, 5};
-        System.out.println(ArrayAlg.minAndmax(arr));
-    }
-}
-
-class ArrayAlg {
-    public static <T extends Comparable> Pair<T> minAndmax(T[] arr) {
-        if (arr == null || arr.length == 0) {
-            return null;
+        Set<Integer> set = new TreeSet<>();
+        for (int i = 0; i < 10; i++) {
+            set.add(i * (int)(Math.random() * 10));
         }
-        T min = arr[0];
-        T max = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (min.compareTo(arr[i]) > 0) {
-                min = arr[i];
-            }
-            if (max.compareTo(arr[i]) < 0) {
-                max = arr[i];
-            }
+
+        for (Integer i : set) {
+            System.out.print(i + " ");
         }
-        return new Pair<>(min, max);
-    }
-}
-
-class Pair<T> {
-    private T first;
-    private T second;
-
-    public Pair(T first, T second) {
-        this.first = first;
-        this.second = second;
-    }
-
-    public T getFirst() {
-        return first;
-    }
-
-    public void setFirst(T first) {
-        this.first = first;
-    }
-
-    public T getSecond() {
-        return second;
-    }
-
-    public void setSecond(T second) {
-        this.second = second;
-    }
-
-    @Override
-    public String toString() {
-        return "Pair{" +
-                "min=" + first +
-                ", max=" + second +
-                '}';
     }
 }
